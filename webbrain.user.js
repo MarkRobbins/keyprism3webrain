@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Keyprism3 WebBrain
 // @namespace    http://mrobbinsassoc.com/
-// @version      0.1
+// @version      0.2
 // @description  Allows interaction of TheBrain and Visual Paradigm
 // @author       Mark Robbins
 // @match        https://webbrain.com/brainpage/brain/09335629-E824-3836-6E1A-8A30325D2C09
