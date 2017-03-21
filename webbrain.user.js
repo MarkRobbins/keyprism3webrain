@@ -17,4 +17,4 @@
 // ==/OpenUserJS==
 
 
-console.log('Keyprism3 WebBrain UserScript');
+console.log('Keyprism3 WebBrain UserScript2');
