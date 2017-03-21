@@ -9,6 +9,7 @@
 // @copyright    2017, Mark Robbins
 // @homepageURL  http://mrobbinsassoc.com/projects/keyprism3/vp/publish/
 // @supportURL   mailto:mark.robbins@mrobbinsassoc.com
+// @updateURL https://openuserjs.org/meta/MarkRobbins/Keyprism3_WebBrain.meta.js
 // @require      https://code.jquery.com/jquery-3.1.1.min.js
 // ==/UserScript==
 // ==OpenUserJS==
