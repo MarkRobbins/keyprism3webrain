@@ -10,7 +10,7 @@
 // @homepageURL  http://mrobbinsassoc.com/projects/keyprism3/vp/publish/
 // @supportURL   mailto:mark.robbins@mrobbinsassoc.com
 // @updateURL https://openuserjs.org/meta/MarkRobbins/Keyprism3_WebBrain.meta.js
-// @require      https://code.jquery.com/jquery-3.1.1.min.js
+// @require      https://code.jquery.com/jquery-3.2.1.min.js
 // @require      http://mrobbinsassoc.com/projects/keyprism3/vp/scripts/tinycolor.js
 // ==/UserScript==
 // ==OpenUserJS==
@@ -965,7 +965,7 @@
             }
             return val;
             } //-defunction
-          ,messageTop:function(msg){
+          ,messageTop:function(msg){                        //utils.
             //noinspection JSUnresolvedFunction
             window.top.postMessage(msg,'*');
             } //-messageTop
@@ -1584,8 +1584,16 @@
                     href:['/vp/publish/index.html?url=','Package']
                     }
                   ,extractor:function(url){
-                    const u=__.ui.docLinkages.extractors.urlEquals(url);
+                    let u=__.ui.docLinkages.extractors.urlEquals(url);
                     const vp_url='vp_url'._of(__.data.iniData);  //keyprism3.vpp://shape/1234567890123456/1234567890123456
+                    const u0=u;
+                    //if (window.top.location.href.substr(0,5)==='file:') {
+                    if (true) {
+                      //const local=window.top.location.href.replace('index.html','');
+                      const serv='http://mrobbinsassoc.com/projects/keyprism3/vp/publish/content/';
+                      u=u.replace(serv,'');
+                    }
+                    console.log('uu',u);
                     if (!vp_url) {
                       return u;
                     }
@@ -2094,7 +2102,7 @@
               }
               } //-node_inserted
             } //-dom
-          ,kbd:{ //dispatchObject
+          ,kbd:{                           //dispatchObject
             _name:'kbd'
             ,k_ad33:function(evt){         //events.kbd. - pgup.a.D
               this && this["UNUSED PARAM\n"] && this["UNUSED PARAM\n"](evt); // !unup - lint hack for webstorm
@@ -2315,6 +2323,11 @@
             ,message:function(event){      //events.win.
               if (event.data.action==='reportWindowData') {
                 __.data.windowData[event.data.from]=event.data.windowData;
+              }
+              if (event.data.action==='brainNav') {
+                //console.log('message',event.data);
+                //alert('WEBBRAIN',JSON.stringify(event.data.action));
+                location.hash='#-'+event.data.thought_id;
               }
               'onMessage'._bc({event:event, data:event.data});
               } //-message
